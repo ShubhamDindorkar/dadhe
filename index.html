@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Business Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Main App Container with Shared Sidebar -->
+    <div class="app-container">
+        <!-- Shared Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">💬</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" data-page="inbox">
+                    <span class="nav-icon">📥</span>
+                    <span class="nav-text">Team Inbox</span>
+                </a>
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-section="messages">
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-text">Messages</span>
+                </a>
+                <a href="#" class="nav-item" data-section="campaigns">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-text">Campaigns</span>
+                </a>
+                <a href="#" class="nav-item" data-section="templates">
+                    <span class="nav-icon">📄</span>
+                    <span class="nav-text">Templates</span>
+                </a>
+                <a href="#" class="nav-item" data-section="health">
+                    <span class="nav-icon">❤️</span>
+                    <span class="nav-text">Number Health</span>
+                </a>
+                <a href="#" class="nav-item" data-section="webhooks">
+                    <span class="nav-icon">🔗</span>
+                    <span class="nav-text">Webhooks Logs</span>
+                </a>
+                <a href="#" class="nav-item" data-section="safety">
+                    <span class="nav-icon">🛡️</span>
+                    <span class="nav-text">Safety Controls</span>
+                </a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-item" data-section="notifications">
+                    <span class="nav-icon">🔔</span>
+                    <span class="nav-text">Notifications</span>
+                </a>
+                <a href="#" class="nav-item" data-section="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">System Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content-area">
+            <!-- ==================== PAGE 1: TEAM INBOX ==================== -->
+            <div id="inbox-page" class="page">
+                <!-- Top Header Bar -->
+                <div class="inbox-header">
+                    <div class="inbox-title">
+                        <span class="inbox-icon">📥</span>
+                        <h1>Team inbox</h1>
+                        <div class="inbox-actions">
+                            <button class="icon-btn" title="Settings">⚙️</button>
+                            <button class="icon-btn" title="Search">🔍</button>
+                            <button class="icon-btn" title="Add">➕</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inbox-container">
+                    <!-- Left Sidebar - Channels & Contacts -->
+                    <aside class="inbox-sidebar">
+                        <!-- Channels Section -->
+                        <div class="channels-section">
+                            <div class="section-header">
+                                <span>CHANNELS</span>
+                                <div class="new-badges">
+                                    <span class="badge badge-blue">NEW</span>
+                                    <span class="badge badge-red">New</span>
+                                </div>
+                            </div>
+                            <ul class="channel-list">
+                                <li class="channel-item active" data-channel="all">
+                                    <span class="channel-icon">≡</span>
+                                    <span class="channel-name">All Channels</span>
+                                    <span class="channel-count">8</span>
+                                </li>
+                                <li class="channel-item" data-channel="whatsapp">
+                                    <span class="channel-icon">💬</span>
+                                    <span class="channel-name">WhatsApp</span>
+                                    <span class="channel-count">2</span>
+                                </li>
+                                <li class="channel-item" data-channel="calls">
+                                    <span class="channel-icon">📞</span>
+                                    <span class="channel-name">WhatsApp Calls</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Chat Filters -->
+                        <div class="chat-filters">
+                            <button class="filter-btn active" data-filter="all">All chats</button>
+                            <button class="filter-btn" data-filter="active">Active chats</button>
+                            <button class="filter-btn" data-filter="assigned">Assigned to me</button>
+                            <button class="filter-btn" data-filter="unassigned">Unassigned</button>
+                        </div>
+
+                        <!-- More Section -->
+                        <div class="more-section">
+                            <button class="more-toggle">
+                                <span>▼</span> More
+                            </button>
+                        </div>
+
+                        <!-- Contact List -->
+                        <div class="contact-list" id="contact-list">
+                            <!-- Contacts will be dynamically populated -->
+                        </div>
+
+                        <!-- CX Score Promo -->
+                        <div class="cx-promo">
+                            <button class="cx-close">×</button>
+                            <h4>Introducing CX Scores for conversations</h4>
+                            <p>Track your Customer Experience today</p>
+                            <button class="cx-btn">Check your score</button>
+                        </div>
+                    </aside>
+
+                    <!-- Center - Chat Window -->
+                    <main class="chat-window">
+                        <div class="chat-header">
+                            <div class="chat-contact-info">
+                                <h2 id="chat-contact-name">ZANKE SAMYAK PRAKASH</h2>
+                            </div>
+                            <div class="chat-header-actions">
+                                <button class="icon-btn">⋮</button>
+                                <button class="icon-btn">👤</button>
+                            </div>
+                        </div>
+
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Messages will be dynamically populated -->
+                        </div>
+
+                        <!-- Campaign Only Banner -->
+                        <div class="campaign-banner" id="campaign-banner">
+                            <div class="banner-content">
+                                <strong>This is a campaign only chat</strong>
+                                <p>Until you receive a message from the customer, WhatsApp allows only template messages to be sent in these chats. <a href="#">Know More</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Message Input Area -->
+                        <div class="message-input-area" id="message-input-area">
+                            <button class="template-btn" id="template-btn">Select Template</button>
+                            <div class="free-text-input" id="free-text-input" style="display: none;">
+                                <input type="text" id="message-input" placeholder="Type a message...">
+                                <button class="send-btn" id="send-btn">➤</button>
+                            </div>
+                            <button class="emoji-btn">😊</button>
+                        </div>
+                    </main>
+
+                    <!-- Right Panel - Contact Details -->
+                    <aside class="contact-panel" id="contact-panel">
+                        <div class="contact-panel-header">
+                            <button class="panel-toggle-btn" id="panel-toggle-btn" title="Toggle Panel">◀</button>
+                            <h2 id="panel-contact-name">ZANKE SAMYAK PRAKASH</h2>
+                            <button class="icon-btn">⋮</button>
+                        </div>
+
+                        <div class="contact-details">
+                            <!-- Contact Info Section -->
+                            <div class="detail-section collapsible open">
+                                <div class="section-toggle">
+                                    <span>CONTACT INFO</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="section-content">
+                                    <div class="detail-row">
+                                        <span class="detail-icon">📞</span>
+                                        <span class="detail-label">Phone Number</span>
+                                        <span class="detail-value" id="contact-phone">(+91)7028682379</span>
+                                        <button class="copy-btn" title="Copy">📋</button>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-icon">👤</span>
+                                        <span class="detail-label">User Name</span>
+                                        <span class="detail-value" id="contact-username">ZANKE SAMYAK PRAKASH</span>
+                                    </div>
+                                    <div class="detail-row cx-score-row">
+                                        <span class="cx-label">CX Score</span>
+                                        <span class="cx-value" id="cx-score">New</span>
+                                        <a href="#" class="start-tracking" id="start-tracking">Start Tracking</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sales Attributes -->
+                            <div class="detail-section collapsible">
+                                <div class="section-toggle">
+                                    <span>SALES ATTRIBUTES</span>
+                                    <div class="section-actions">
+                                        <button class="edit-btn">✏️</button>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                </div>
+                                <div class="section-content">
+                                    <p class="no-data">No attributes set</p>
+                                </div>
+                            </div>
+
+                            <!-- Contact Attributes -->
+                            <div class="detail-section collapsible">
+                                <div class="section-toggle">
+                                    <span>CONTACT ATTRIBUTES</span>
+                                    <div class="section-actions">
+                                        <button class="edit-btn">✏️</button>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                </div>
+                                <div class="section-content">
+                                    <p class="no-data">No attributes set</p>
+                                </div>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="detail-section collapsible open">
+                                <div class="section-toggle">
+                                    <span>TAGS</span>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                                <div class="section-content">
+                                    <div class="tags-container" id="tags-container">
+                                        <!-- Tags will be dynamically populated -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notes -->
+                            <div class="detail-section collapsible">
+                                <div class="section-toggle">
+                                    <span>NOTES</span>
+                                    <div class="section-actions">
+                                        <button class="add-btn">+</button>
+                                        <span class="toggle-icon">▼</span>
+                                    </div>
+                                </div>
+                                <div class="section-content">
+                                    <div class="notes-container" id="notes-container">
+                                        <textarea placeholder="Add a note..." id="note-input"></textarea>
+                                        <button class="save-note-btn" id="save-note-btn">Save Note</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- ==================== PAGE 2: DASHBOARD ==================== -->
+            <div id="dashboard-page" class="page active">
+                <!-- Dashboard Top Bar -->
+                <div class="dashboard-topbar">
+                    <div class="number-selector">
+                        <span class="number-label">Number</span>
+                        <select id="number-select">
+                            <option value="+15551234567">+1 (555) 123-4567</option>
+                            <option value="+15559876543">+1 (555) 987-6543</option>
+                        </select>
+                        <span class="status-badge green" id="number-status">GREEN</span>
+                    </div>
+                    <div class="topbar-right">
+                        <div class="kill-switch-container">
+                            <span class="kill-switch-label">Global Kill Switch:</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="global-kill-switch">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="user-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23f0f0f0'/%3E%3Ccircle cx='50' cy='35' r='20' fill='%23ccc'/%3E%3Cellipse cx='50' cy='80' rx='35' ry='25' fill='%23ccc'/%3E%3C/svg%3E" alt="User">
+                            <span class="online-indicator"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kill Switch Alert Banner -->
+                <div class="kill-switch-alert" id="kill-switch-alert" style="display: none;">
+                    <span class="alert-icon">⚠️</span>
+                    <span class="alert-text">GLOBAL KILL SWITCH IS ACTIVE - All message sending is paused</span>
+                    <button class="alert-dismiss" id="alert-dismiss">Dismiss</button>
+                </div>
+
+                <!-- Main Dashboard Content -->
+                <main class="dashboard-main">
+                    <h1 class="dashboard-title">Main Dashboard</h1>
+
+                    <!-- Metric Cards -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-icon">💚</span>
+                                <span class="metric-label">Health Score</span>
+                            </div>
+                            <div class="metric-value" id="health-score">92</div>
+                            <div class="metric-status excellent" id="health-status">Excellent</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-icon">🚫</span>
+                                <span class="metric-label">Blocked Rate</span>
+                            </div>
+                            <div class="metric-value" id="blocked-rate">0.5%</div>
+                            <div class="metric-status low-risk" id="blocked-status">Low Risk</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-icon">⚠️</span>
+                                <span class="metric-label">Failed Rate</span>
+                            </div>
+                            <div class="metric-value" id="failed-rate">1.2%</div>
+                            <div class="metric-status monitor" id="failed-status">Monitor Closely</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-icon">📈</span>
+                                <span class="metric-label">Daily Send Limit</span>
+                            </div>
+                            <div class="metric-value" id="daily-limit">8,500/10,000</div>
+                            <div class="metric-status approaching" id="limit-status">Approaching Limit</div>
+                        </div>
+                    </div>
+
+                    <!-- Safety Gate Status Panel -->
+                    <div class="safety-panel">
+                        <h2 class="panel-title">Safety Gate Status Panel</h2>
+                        <div class="safety-gates">
+                            <div class="safety-gate active" data-gate="opt-in">
+                                <span class="gate-status success">✓</span>
+                                <span class="gate-name">Opt-in Validation</span>
+                                <label class="mini-toggle">
+                                    <input type="checkbox" checked data-gate-toggle="opt-in">
+                                    <span class="mini-slider"></span>
+                                </label>
+                            </div>
+                            <div class="safety-gate active" data-gate="24h-session">
+                                <span class="gate-status success">✓</span>
+                                <span class="gate-name">24h Session Rule</span>
+                                <label class="mini-toggle">
+                                    <input type="checkbox" checked data-gate-toggle="24h-session">
+                                    <span class="mini-slider"></span>
+                                </label>
+                            </div>
+                            <div class="safety-gate warning" data-gate="rate-limiter">
+                                <span class="gate-status warn">⚠</span>
+                                <span class="gate-name">Rate Limiter</span>
+                                <label class="mini-toggle">
+                                    <input type="checkbox" checked data-gate-toggle="rate-limiter">
+                                    <span class="mini-slider"></span>
+                                </label>
+                            </div>
+                            <div class="safety-gate active" data-gate="warmup">
+                                <span class="gate-status success">✓</span>
+                                <span class="gate-name">Warm-up Mode</span>
+                                <label class="mini-toggle">
+                                    <input type="checkbox" checked data-gate-toggle="warmup">
+                                    <span class="mini-slider"></span>
+                                </label>
+                            </div>
+                            <div class="safety-gate active" data-gate="template">
+                                <span class="gate-status success">✓</span>
+                                <span class="gate-name">Template Enforcement</span>
+                                <label class="mini-toggle">
+                                    <input type="checkbox" checked data-gate-toggle="template">
+                                    <span class="mini-slider"></span>
+                                </label>
+                            </div>
+                            <div class="safety-gate inactive" data-gate="kill-switch">
+                                <span class="gate-status danger">✕</span>
+                                <span class="gate-name">Global Kill Switch</span>
+                                <label class="mini-toggle">
+                                    <input type="checkbox" data-gate-toggle="kill-switch">
+                                    <span class="mini-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message Activity Timeline -->
+                    <div class="timeline-panel">
+                        <div class="timeline-header">
+                            <h2 class="panel-title">Message Activity Timeline</h2>
+                            <select id="timeline-filter" class="timeline-select">
+                                <option value="24h">Last 24 hours</option>
+                                <option value="7d">Last 7 days</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="activity-chart"></canvas>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot sent"></span> Sent</span>
+                            <span class="legend-item"><span class="legend-dot delivered"></span> Delivered</span>
+                            <span class="legend-item"><span class="legend-dot failed"></span> Failed</span>
+                            <span class="legend-item"><span class="legend-dot blocked"></span> Blocked</span>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Safety Monitor -->
+                    <div class="campaign-monitor">
+                        <h2 class="panel-title">Campaign Safety Monitor</h2>
+                        <table class="campaign-table">
+                            <thead>
+                                <tr>
+                                    <th>Campaign Name</th>
+                                    <th>Message Type</th>
+                                    <th>Messages Sent</th>
+                                    <th>Block %</th>
+                                    <th>Failure %</th>
+                                    <th>Status</th>
+                                    <th>Auto-action Taken</th>
+                                </tr>
+                            </thead>
+                            <tbody id="campaign-table-body">
+                                <!-- Campaign rows will be dynamically populated -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Footer -->
+                    <footer class="dashboard-footer">
+                        <p>&copy; 2025 WhatsApp Safety Platform. All rights reserved.</p>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODALS ==================== -->
+
+    <!-- Template Selection Modal -->
+    <div class="modal" id="template-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Template</h3>
+                <button class="modal-close" id="template-modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="template-search" placeholder="Search templates..." id="template-search">
+                <div class="template-list" id="template-list">
+                    <!-- Templates will be dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campaign Details Modal -->
+    <div class="modal" id="campaign-modal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h3 id="campaign-modal-title">Campaign Details</h3>
+                <button class="modal-close" id="campaign-modal-close">×</button>
+            </div>
+            <div class="modal-body" id="campaign-modal-body">
+                <!-- Campaign details will be dynamically populated -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="campaign-pause-btn">Pause Campaign</button>
+                <button class="btn btn-danger" id="campaign-stop-btn">Stop Campaign</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Tag Modal -->
+    <div class="modal" id="tag-modal">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h3>Add Tag</h3>
+                <button class="modal-close" id="tag-modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="new-tag-input" placeholder="Enter tag name...">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="add-tag-btn">Add Tag</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle" title="Toggle Dark Mode">
+        🌙
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize state from localStorage
+            AppState.init();
+            
+            // Initialize all modules
+            ChatModule.init();
+            DashboardModule.init();
+            ChartsModule.init();
+            
+            // Setup page navigation
+            setupPageNavigation();
+            
+            // Setup dark mode
+            setupDarkMode();
+            
+            // Setup keyboard shortcuts
+            setupKeyboardShortcuts();
+        });
+
+        // Page Navigation
+        function setupPageNavigation() {
+            const sidebarNavItems = document.querySelectorAll('.sidebar-nav .nav-item[data-page]');
+            const pages = document.querySelectorAll('.page');
+
+            sidebarNavItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetPage = item.dataset.page;
+                    
+                    // Update active nav item
+                    document.querySelectorAll('.sidebar-nav .nav-item').forEach(n => n.classList.remove('active'));
+                    item.classList.add('active');
+                    
+                    // Show target page
+                    pages.forEach(page => {
+                        page.classList.remove('active');
+                        if (page.id === `${targetPage}-page`) {
+                            page.classList.add('active');
+                        }
+                    });
+
+                    // Reinitialize charts if switching to dashboard
+                    if (targetPage === 'dashboard') {
+                        ChartsModule.init();
+                    }
+                });
+            });
+        }
+
+        // Dark Mode
+        function setupDarkMode() {
+            const toggle = document.getElementById('dark-mode-toggle');
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                toggle.textContent = '☀️';
+            }
+            
+            toggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                localStorage.setItem('darkMode', isDark);
+                toggle.textContent = isDark ? '☀️' : '🌙';
+                
+                // Reinitialize charts with new theme
+                ChartsModule.init();
+            });
+        }
+
+        // Keyboard Shortcuts
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + 1: Go to Inbox
+                if ((e.ctrlKey || e.metaKey) && e.key === '1') {
+                    e.preventDefault();
+                    document.querySelector('.sidebar-nav [data-page="inbox"]').click();
+                }
+                // Ctrl/Cmd + 2: Go to Dashboard
+                if ((e.ctrlKey || e.metaKey) && e.key === '2') {
+                    e.preventDefault();
+                    document.querySelector('.sidebar-nav [data-page="dashboard"]').click();
+                }
+                // Ctrl/Cmd + K: Toggle Kill Switch
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const killSwitch = document.getElementById('global-kill-switch');
+                    killSwitch.checked = !killSwitch.checked;
+                    killSwitch.dispatchEvent(new Event('change'));
+                }
+                // Escape: Close modals
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal.active').forEach(modal => {
+                        modal.classList.remove('active');
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
