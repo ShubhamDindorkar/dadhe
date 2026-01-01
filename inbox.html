@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Inbox - WhatsApp Business Platform</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/inbox.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">💬</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="inbox.html" class="nav-item active">
+                    <span class="nav-icon">📥</span>
+                    <span class="nav-text">Team Inbox</span>
+                </a>
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-text">Messages</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-text">Campaigns</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📄</span>
+                    <span class="nav-text">Templates</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">❤️</span>
+                    <span class="nav-text">Number Health</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔗</span>
+                    <span class="nav-text">Webhooks Logs</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🛡️</span>
+                    <span class="nav-text">Safety Controls</span>
+                </a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔔</span>
+                    <span class="nav-text">Notifications</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">System Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content-area">
+            <!-- Top Header Bar -->
+            <div class="inbox-header">
+                <div class="inbox-title">
+                    <span class="inbox-icon">📥</span>
+                    <h1>Team inbox</h1>
+                    <div class="inbox-actions">
+                        <button class="icon-btn" title="Settings">⚙️</button>
+                        <button class="icon-btn" title="Search">🔍</button>
+                        <button class="icon-btn" title="Add">➕</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inbox-container">
+                <!-- Left Sidebar - Channels & Contacts -->
+                <aside class="inbox-sidebar">
+                    <!-- Channels Section -->
+                    <div class="channels-section">
+                        <div class="section-header">
+                            <span>CHANNELS</span>
+                            <div class="new-badges">
+                                <span class="badge badge-blue">NEW</span>
+                                <span class="badge badge-red">New</span>
+                            </div>
+                        </div>
+                        <ul class="channel-list">
+                            <li class="channel-item active">
+                                <span class="channel-icon">≡</span>
+                                <span class="channel-name">All Channels</span>
+                                <span class="channel-count">8</span>
+                            </li>
+                            <li class="channel-item">
+                                <span class="channel-icon">💬</span>
+                                <span class="channel-name">WhatsApp</span>
+                                <span class="channel-count">2</span>
+                            </li>
+                            <li class="channel-item">
+                                <span class="channel-icon">📞</span>
+                                <span class="channel-name">WhatsApp Calls</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Chat Filters -->
+                    <div class="chat-filters">
+                        <button class="filter-btn active">All chats</button>
+                        <button class="filter-btn">Active chats</button>
+                        <button class="filter-btn">Assigned to me</button>
+                        <button class="filter-btn">Unassigned</button>
+                    </div>
+
+                    <!-- More Section -->
+                    <div class="more-section">
+                        <button class="more-toggle">
+                            <span>▼</span> More
+                        </button>
+                    </div>
+
+                    <!-- Contact List -->
+                    <div class="contact-list">
+                        <div class="contact-item active">
+                            <div class="contact-avatar">ZS</div>
+                            <div class="contact-info">
+                                <div class="contact-header">
+                                    <span class="contact-name">ZANKE SAMYAK PRAKASH</span>
+                                    <span class="contact-time">10:30 AM</span>
+                                </div>
+                                <div class="contact-preview">
+                                    <span class="fire-emoji">🔥</span>
+                                    <span>Summer Sale! 50% off...</span>
+                                </div>
+                                <div class="contact-badge">
+                                    <span class="campaign-badge">Campaign</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-avatar">RK</div>
+                            <div class="contact-info">
+                                <div class="contact-header">
+                                    <span class="contact-name">Rahul Kumar</span>
+                                    <span class="contact-time">9:45 AM</span>
+                                </div>
+                                <div class="contact-preview">
+                                    <span>Hi, I need help with my order...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-avatar">PS</div>
+                            <div class="contact-info">
+                                <div class="contact-header">
+                                    <span class="contact-name">Priya Sharma</span>
+                                    <span class="contact-time">Yesterday</span>
+                                </div>
+                                <div class="contact-preview">
+                                    <span>Thanks for the quick response!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-avatar">AJ</div>
+                            <div class="contact-info">
+                                <div class="contact-header">
+                                    <span class="contact-name">Amit Joshi</span>
+                                    <span class="contact-time">Yesterday</span>
+                                </div>
+                                <div class="contact-preview">
+                                    <span>When will my order be delivered?</span>
+                                </div>
+                                <div class="contact-badge">
+                                    <span class="campaign-badge">Campaign</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-avatar">SM</div>
+                            <div class="contact-info">
+                                <div class="contact-header">
+                                    <span class="contact-name">Sneha Mehta</span>
+                                    <span class="contact-time">2 days ago</span>
+                                </div>
+                                <div class="contact-preview">
+                                    <span>I'd like to return this product</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CX Score Promo -->
+                    <div class="cx-promo">
+                        <button class="cx-close">×</button>
+                        <h4>Introducing CX Scores for conversations</h4>
+                        <p>Track your Customer Experience today</p>
+                        <button class="cx-btn">Check your score</button>
+                    </div>
+                </aside>
+
+                <!-- Center - Chat Window -->
+                <main class="chat-window">
+                    <div class="chat-header">
+                        <div class="chat-contact-info">
+                            <h2>ZANKE SAMYAK PRAKASH</h2>
+                        </div>
+                        <div class="chat-header-actions">
+                            <button class="icon-btn">⋮</button>
+                            <button class="icon-btn">👤</button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages">
+                        <!-- Date Separator -->
+                        <div class="message-date">
+                            <span>Today</span>
+                        </div>
+
+                        <!-- System Message -->
+                        <div class="system-message">
+                            Chat started via Summer Sale Campaign
+                        </div>
+
+                        <!-- Outgoing Template Message -->
+                        <div class="message outgoing">
+                            <div class="template-content">
+                                <div class="template-header">🔥 Summer Sale!</div>
+                                <div class="template-body">
+                                    Hi ZANKE SAMYAK PRAKASH! Get 50% off on all products this weekend only. 
+                                    Use code: SUMMER50 at checkout.
+                                </div>
+                                <div class="template-buttons">
+                                    <span class="template-btn-action">Shop Now</span>
+                                    <span class="template-btn-action">View Offers</span>
+                                </div>
+                                <div class="template-signature">— Your Brand Team</div>
+                            </div>
+                            <div class="message-footer">
+                                10:30 AM <span class="message-status delivered">✓✓</span>
+                            </div>
+                        </div>
+
+                        <!-- Incoming Message -->
+                        <div class="message incoming">
+                            <div class="message-bubble">
+                                <div class="message-text">Hi! Is this offer valid for all products?</div>
+                            </div>
+                            <div class="message-footer">10:35 AM</div>
+                        </div>
+
+                        <!-- Outgoing Message -->
+                        <div class="message outgoing">
+                            <div class="message-bubble">
+                                <div class="message-text">Yes! The SUMMER50 code works on all items in our store. Is there anything specific you're looking for?</div>
+                            </div>
+                            <div class="message-footer">
+                                10:37 AM <span class="message-status read">✓✓</span>
+                            </div>
+                        </div>
+
+                        <!-- Incoming Message -->
+                        <div class="message incoming">
+                            <div class="message-bubble">
+                                <div class="message-text">Great! I'm interested in the electronics section. Do you have any laptops on sale?</div>
+                            </div>
+                            <div class="message-footer">10:40 AM</div>
+                        </div>
+
+                        <!-- Outgoing Message -->
+                        <div class="message outgoing">
+                            <div class="message-bubble">
+                                <div class="message-text">Absolutely! We have some amazing deals on laptops. The MacBook Air M2 is 30% off, and the Dell XPS 15 is 40% off. Would you like me to send you the direct links?</div>
+                            </div>
+                            <div class="message-footer">
+                                10:42 AM <span class="message-status read">✓✓</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Only Banner -->
+                    <div class="campaign-banner">
+                        <div class="banner-content">
+                            <strong>This is a campaign only chat</strong>
+                            <p>Until you receive a message from the customer, WhatsApp allows only template messages to be sent in these chats. <a href="#">Know More</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Message Input Area -->
+                    <div class="message-input-area">
+                        <div class="free-text-input" style="display: flex;">
+                            <input type="text" placeholder="Type a message...">
+                            <button class="send-btn">➤</button>
+                        </div>
+                        <button class="emoji-btn">😊</button>
+                    </div>
+                </main>
+
+                <!-- Right Panel - Contact Details -->
+                <aside class="contact-panel">
+                    <div class="contact-panel-header">
+                        <button class="panel-toggle-btn" title="Toggle Panel">◀</button>
+                        <h2>ZANKE SAMYAK PRAKASH</h2>
+                        <button class="icon-btn">⋮</button>
+                    </div>
+
+                    <div class="contact-details">
+                        <!-- Contact Info Section -->
+                        <div class="detail-section collapsible open">
+                            <div class="section-toggle">
+                                <span>CONTACT INFO</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="section-content">
+                                <div class="detail-row">
+                                    <span class="detail-icon">📞</span>
+                                    <span class="detail-label">Phone Number</span>
+                                    <span class="detail-value">(+91)7028682379</span>
+                                    <button class="copy-btn" title="Copy">📋</button>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-icon">👤</span>
+                                    <span class="detail-label">User Name</span>
+                                    <span class="detail-value">ZANKE SAMYAK PRAKASH</span>
+                                </div>
+                                <div class="detail-row cx-score-row">
+                                    <span class="cx-label">CX Score</span>
+                                    <span class="cx-value">New</span>
+                                    <a href="#" class="start-tracking">Start Tracking</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sales Attributes -->
+                        <div class="detail-section collapsible">
+                            <div class="section-toggle">
+                                <span>SALES ATTRIBUTES</span>
+                                <div class="section-actions">
+                                    <button class="edit-btn">✏️</button>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="section-content">
+                                <p class="no-data">No attributes set</p>
+                            </div>
+                        </div>
+
+                        <!-- Contact Attributes -->
+                        <div class="detail-section collapsible">
+                            <div class="section-toggle">
+                                <span>CONTACT ATTRIBUTES</span>
+                                <div class="section-actions">
+                                    <button class="edit-btn">✏️</button>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="section-content">
+                                <p class="no-data">No attributes set</p>
+                            </div>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="detail-section collapsible open">
+                            <div class="section-toggle">
+                                <span>TAGS</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="section-content">
+                                <div class="tags-container">
+                                    <span class="tag">VIP Customer <span class="tag-remove">×</span></span>
+                                    <span class="tag">Summer Sale <span class="tag-remove">×</span></span>
+                                    <span class="tag">Electronics <span class="tag-remove">×</span></span>
+                                    <button class="add-tag-btn">+ Add Tag</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="detail-section collapsible open">
+                            <div class="section-toggle">
+                                <span>NOTES</span>
+                                <div class="section-actions">
+                                    <button class="add-btn">+</button>
+                                    <span class="toggle-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="section-content">
+                                <div class="notes-container">
+                                    <textarea placeholder="Add a note..."></textarea>
+                                    <button class="save-note-btn">Save Note</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="inbox.html" class="nav-item active">
+            <span class="nav-icon">📥</span>
+            <span class="nav-text">Inbox</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">📢</span>
+            <span class="nav-text">Campaigns</span>
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Settings</span>
+        </a>
+    </nav>
+</body>
+</html>
+

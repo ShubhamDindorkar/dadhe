@@ -1,0 +1,296 @@
+/* ============================================
+   Dashboard Page Styles
+   ============================================ */
+
+/* Dashboard Top Bar */
+.dashboard-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.number-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.number-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.number-selector select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 180px;
+}
+
+.kill-switch-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.kill-switch-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* Kill Switch Alert */
+.kill-switch-alert {
+    background: var(--danger-red);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    animation: slideDown var(--transition-normal);
+}
+
+.alert-icon {
+    font-size: var(--font-size-xl);
+}
+
+.alert-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+.alert-dismiss {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.alert-dismiss:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Dashboard Main Content */
+.dashboard-main {
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+    flex: 1;
+}
+
+.dashboard-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Safety Panel */
+.safety-panel {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.panel-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+}
+
+.safety-gates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+.safety-gate {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.safety-gate:hover {
+    background: var(--bg-tertiary);
+}
+
+.safety-gate.active {
+    border-color: var(--success-green);
+}
+
+.safety-gate.warning {
+    border-color: var(--warning-amber);
+    background: #FFFBEB;
+}
+
+.safety-gate.inactive {
+    border-color: var(--danger-red);
+    background: #FEF2F2;
+}
+
+.gate-status {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+
+.gate-status.success {
+    background: #D1FAE5;
+    color: var(--success-green);
+}
+
+.gate-status.warn {
+    background: #FEF3C7;
+    color: var(--warning-amber);
+}
+
+.gate-status.danger {
+    background: #FEE2E2;
+    color: var(--danger-red);
+}
+
+.gate-name {
+    flex: 1;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+}
+
+/* Timeline Panel */
+.timeline-panel {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.timeline-select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 150px;
+}
+
+.chart-container {
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.chart-placeholder {
+    color: var(--text-tertiary);
+    font-size: var(--font-size-md);
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-md);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+}
+
+.legend-dot.sent {
+    background: #F97316;
+}
+
+.legend-dot.delivered {
+    background: #22C55E;
+}
+
+.legend-dot.failed {
+    background: #6B7280;
+}
+
+.legend-dot.blocked {
+    background: #EAB308;
+}
+
+/* Campaign Monitor Table */
+.campaign-monitor {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    overflow-x: auto;
+}
+
+.campaign-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.campaign-table th,
+.campaign-table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.campaign-table th {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+}
+
+.campaign-table tr:hover {
+    background: var(--bg-tertiary);
+    cursor: pointer;
+}
+
+.campaign-table td {
+    font-size: var(--font-size-md);
+}
+
+/* Dashboard Footer */
+.dashboard-footer {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+    border-top: 1px solid var(--border-light);
+    margin-top: var(--spacing-xl);
+}
+

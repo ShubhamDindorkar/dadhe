@@ -1,0 +1,149 @@
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Large screens - ensure full sidebar is shown */
+@media (min-width: 1200px) {
+    .app-container {
+        grid-template-columns: 220px 1fr;
+    }
+    
+    .nav-text {
+        display: inline;
+    }
+    
+    .sidebar-nav {
+        align-items: stretch;
+    }
+    
+    .nav-item {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1199px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .safety-gates {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .app-container {
+        grid-template-columns: 60px 1fr;
+    }
+    
+    .inbox-container {
+        grid-template-columns: 250px 1fr 280px;
+    }
+    
+    .nav-text {
+        display: none;
+    }
+    
+    .sidebar-nav {
+        align-items: center;
+    }
+    
+    .nav-item {
+        justify-content: center;
+        padding: var(--spacing-md);
+    }
+    
+    .sidebar-logo {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 850px) {
+    .inbox-container {
+        grid-template-columns: 220px 1fr;
+    }
+    
+    .contact-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-sidebar {
+        display: none;
+    }
+    
+    .inbox-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .inbox-sidebar {
+        display: none;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .safety-gates {
+        grid-template-columns: 1fr;
+    }
+    
+    .campaign-table {
+        font-size: var(--font-size-sm);
+    }
+    
+    .campaign-table th,
+    .campaign-table td {
+        padding: var(--spacing-sm);
+    }
+    
+    /* Mobile Navigation */
+    .mobile-nav {
+        display: flex;
+    }
+}
+
+/* Mobile Navigation (shown on small screens) */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    padding: var(--spacing-sm);
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.mobile-nav .nav-item {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+}
+
+.mobile-nav .nav-icon {
+    font-size: var(--font-size-xl);
+}
+
+.mobile-nav .nav-text {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: flex;
+    }
+    
+    body {
+        padding-bottom: 70px;
+    }
+}
+
